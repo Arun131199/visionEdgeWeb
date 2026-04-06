@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useTheme } from "../hooks/ThemeProvider";
 
 export function Contact() {
     const [formState, setFormState] = useState({
@@ -13,6 +14,7 @@ export function Contact() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [_focusedField, setFocusedField] = useState<string | null>(null);
+    const { theme } = useTheme()
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -56,7 +58,7 @@ export function Contact() {
         { value: "Google Ads", label: "Google Advertising", icon: "🔍", description: "Search, display, YouTube" },
     ];
 
-    
+
 
     return (
         <section id="contact" className="py-24 px-6 bg-white dark:bg-[#0A0A0F] relative overflow-hidden">
@@ -279,11 +281,20 @@ export function Contact() {
                                             onChange={(e) => setFormState({ ...formState, preferred_time: e.target.value })}
                                             className="w-full px-4 py-3 bg-white dark:bg-[#0A0A0F] border-2 border-[#E8E8F0] dark:border-[#1C1C28] rounded-xl text-[#1A1A2E] dark:text-white focus:border-[#2664eb] focus:outline-none transition-all duration-300"
                                             required
-                                            step="900" // 15-minute intervals
+                                            step="900"
                                             min="10:00"
                                             max="19:30"
                                         />
-                                        
+                                        {
+                                            theme === "dark" ? (
+                                                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                                                    <svg className="w-5 h-5 text-[#2664eb]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </div>
+                                            ) : ("")
+                                        }
+
                                     </div>
                                     <p className="text-xs text-[#5A5A7A] dark:text-[#8888A8] mt-1">
                                         Available time: 10:00 AM to 7:30 PM (IST)
