@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <style>
+    .text {
+      font-family: Arial, sans-serif;
+      font-size: 70px;
+      font-weight: bold;
+    }
+
+    /* Default (Light mode) */
+    .primary-text {
+      fill: #1f2937;
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      .primary-text {
+        fill: #ffffff;
+      }
+    }
+
+    .accent {
+      fill: #2563eb;
+    }
+  </style>
+
+  <!-- Triangle Logo -->
+  <polygon 
+    points="60,150 120,40 180,150" 
+    class="accent"
+  />
+
+  <!-- Text -->
+  <text x="200" y="130" class="text primary-text">
+    Vision<tspan class="accent">Edge</tspan>
+  </text>
+</svg>
