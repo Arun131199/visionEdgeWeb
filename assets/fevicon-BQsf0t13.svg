@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
-  <!-- Outer Triangle -->
-  <path d="M20 5 L35 35 L5 35 Z" fill="black"/>
-  
-  <!-- Inner Triangle -->
-  <path d="M20 12 L30 32 L10 32 Z" fill="#3B82F6"/>
-</svg>
