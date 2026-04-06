@@ -1,8 +1,7 @@
-import { useTheme } from "../../hooks/ThemeProvider";
+
 
 
 export default function Logo() {
-    const { theme } = useTheme();
 
     return (
         <div className="flex items-center gap-2">

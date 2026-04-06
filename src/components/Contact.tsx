@@ -12,7 +12,7 @@ export function Contact() {
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const [focusedField, setFocusedField] = useState<string | null>(null);
+    const [_focusedField, setFocusedField] = useState<string | null>(null);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
